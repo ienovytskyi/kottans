@@ -1,0 +1,82 @@
+whatwg
+w3c nu validator
+
+
+void - в осн не треб закр тега
+raw text - style script
+escapable raw text - textarea
+foreign
+
+
+
+<b> - жирниый <strong> - важный
+<i> <em>
+
+4 категории аттрибутов:
+global: id, class, lang, hidden,
+events: onclick
+datas
+... : button type
+
+<link rel=stylesheet media=>
+<link rel=author href=>
+<link rel=next href=>
+<link rel=prefetch href=>
+<link rel=canonical href=>
+
+<base href=/ target=_blank>
+
+<tamplate>
+	тут хранить темплейты
+</tamplate>
+
+также их можно технически хранить в тегах скрипт или носкрипт с типом который браузер не понимает. но так низя
+
+<script src"" defer async (1 из них)></script>
+
+document ready state
+
+<script type=module> </script> по умолчанию деффер
+
+
+html.spec.whatwg.org/#the-script-elemnt
+
+
+делаем вложенность <section></..> имеет семантический смысл (див напр просто див)
+<article> - любой самодостаточный контент (виджет)
+
+<aside> - 
+<figure>
+
+<ins>
+<del> - удаленное
+<s> - утратило актуальность
+
+<mark> - немедленное выдленеие текстаю то что нужно сдесь и сейчас
+
+<time datetime=""></time>
+
+&mdash
+&ndash
+&amp
+&copy
+
+
+<a href=cv.pdf download=aaaaaaaa.pdf>my CV</a> скачать cv.pdf с именем aaaaaaaa.pdf
+
+
+
+<dialog></dialog>
+
+
+
+caniuse.com
+html5doctor.com
+
+
+разметить (не сверстать) хабр (любую статью) до чт
+
+
+
+
+
