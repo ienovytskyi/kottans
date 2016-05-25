@@ -1,0 +1,80 @@
+reset css
+pseudoclasses
+комбинаторы
+::after
+::before
+
+полифилы
+css filters
+float
+clear fix
+
+shadow DOM
+
+
+
+
+
+Джон, просто Джон
+@sudodoki
+20:41
+https://css-tricks.com/box-sizing/
+|| https://developer.mozilla.org/en/docs/Web/CSS/box-sizing
+Джон, просто Джон
+@sudodoki
+20:46
+http://caniuse.com/#feat=css-variables
+http://cssnext.io/
+Aleksey Shvayka
+@shvaikalesh
+20:49
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+Leo Hrabovetskyi
+@m1n0s
+20:55
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+Taras Hupalo
+@cwayfinder
+20:56
+http://flexbox.io/ WHAT THE FLEXBOX?!
+A simple, free 20 video course that will help you master CSS Flexbox!
+Aleksey Shvayka
+@shvaikalesh
+20:57
+https://vimeo.com/67011034
+https://www.youtube.com/watch?v=_98SE8WUvLk
+Leo Hrabovetskyi
+@m1n0s
+20:58
+http://www.flexboxdefense.com/ :trollface:
+Aleksey Shvayka
+@shvaikalesh
+20:58
+http://flexboxfroggy.com/
+Пиотровский Евгений
+@Piotrovskyi_twitter
+20:59
+http://flexboxin5.com/
+Aleksey Shvayka
+@shvaikalesh
+21:08
+http://blog.teamtreehouse.com/css-scroll-snap-points
+Джон, просто Джон
+@sudodoki
+21:13
+https://css-tricks.com/basics-css-blend-modes/
+https://developer.mozilla.org/en/docs/Web/CSS/filter
+Aleksey Shvayka
+@shvaikalesh
+21:14
+http://codepen.io/noahblon/pen/ZbjmbK
+Leo Hrabovetskyi
+@m1n0s
+21:16
+http://aerolab.github.io/midnight.js/
+Aleksey Shvayka
+@shvaikalesh
+21:21
+http://maintainablecss.com/
+https://github.com/peterramsing/lost
+https://github.com/oddbird/susy
