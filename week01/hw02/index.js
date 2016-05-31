@@ -8,6 +8,8 @@ const html=fs.readFileSync('./index.html')
 
 //const regexp=/(col)-(xs|sm|md|lg)-((\d([0-2])?)|((push)-\d([0-2])?)|((pull)-\d([0-2])?)|((offset)-\d([0-2])?))/ig						//boostrap prev rpod
 //const regexp1=/(?:\s)?\bcol-(?:xs|sm|md|lg)(?:-(?:push|pull|offset))?-(?:\d(?:[0-2])?)\b(?:\s)?/ig									//bootstrap final prod
+
+//only for https://gist.github.com/geksilla/6543145#file-bootsrap_class_list-L35-L187
 const regexp2=/(?:\s)?\bjs(?:\w|-)*(?:\s)?/ig																							//js prod
 const regexp3=/(?:(?:\s)?\bcol-(?:xs|sm|md|lg)(?:-(?:push|pull|offset))?-(?:\d(?:[0-2])?)\b(?:\s)?)|(?:(?:\s)?\bjs(?:\w|-)*(?:\s)?)/ig	//combo regexp
 const treg=/(?:\w|-)\s+(?:\w|-)/ig				//if there is bootstrap/js* class only, delete class attr
