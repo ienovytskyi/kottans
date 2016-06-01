@@ -1,0 +1,154 @@
+es6-shim
+core-js
+
+Object.assign
+$.extend
+1. all keys - строки и символы
+2. determined order
+3. does not copy descriptor
+4. check enumerability in order
+5. skips == null
+
+
+var arr = [1,2,3]
+Object.keys(arr)
+
+Object.assign(targer, obj1, obj2)
+
+polyfill vs ponyfill
+
+статический метод
+
+
+
+Object.is
+
+4 алгоритма сравнени€:
+Abstact eq ==
+Strict eq ===  (-0===0 NaN!==NaN)
+SameValue (fix NaN)
+SameValueZero (fix 0/-0)
+Object.is(0,-0) //false
+Object.is(NaN,NaN) //true
+остальные случаи как ===
+const {is} = Object
+
+
+Object.setPrototypeOf(targer, obj)
+target.__proto__ = =obj		(Annex B)
+
+
+Array.from({arguments}) -> [ ]
+вместо [].slice.call(arguments)
+Array.from(document.qsA("a"))
+
+const {from} = Array
+from(arguments)
+
+
+Array#find
+Array#findIndex
+идут по массиву пока коллбэк не вернет тру
+Array.prototype.find
+Array::find
+
+var arr = [ ,,,,, ]
+car found = arr.find(function(el)
+{
+	if (el.someProp = ...)
+	return el
+})
+
+Array(10).map(function(_, i)
+{
+	return i
+})
+
+Array.from({ length: 10}, (_, i) => 
+{
+	return i
+})
+
+
+Array.of
+Array(10.5) - error
+Array.of(10.5) - norm
+
+
+
+
+индексы массива это строки
+
+
+typeof Symbol() == "symbol"
+var sym = Symbol()
+var obj = {}
+obj[sym]=2
+obj[sym] // 2
+
+Object.keys(obj) // [] кроме тех которые не перечисл€ютс€
+Object.getOwnPropertyNames(obj) // []
+Object.getOwnPropertySymbols(obj) // [ sym ]
+
+Symbol.key
+Symbol.keyFor
+###realm
+
+for/in - не известно какой пор€док прохода по ключам
+
+
+well-known symbols
+[].concat( 1,2,3 ) = [].concat([ 1,2,3 ])
+
+NodeList.prototype[Symbol.isConcatSpreadable] = function ()
+{
+	return true
+}
+
+
+Symbol.iterator
+function random(n)
+{
+	var obj = {}
+	obj[Symbol.iterator] = function()
+	{}
+}
+
+
+consumers
+for (var el of array)
+[ ...array ]
+new Set(array)
+Promise.all(array)
+
+###obj.__proto__ = "22"
+
+var map = new Map
+vmesto obj[] = 
+map.set
+map.set
+
+smth in obj
+map.has
+delete obj[]
+map.delete
+
+
+var map = new Set
+set.add(10)
+set.add(10)
+set.size // 1
+
+
+var weakSet = new WeakSet
+function wasCalledOn(obj)
+{
+	var has = weakSet.has(obj)
+	if (has) return true
+
+	weakSet.add(obj)	будет держатьс€ в пам€ти дальше
+	set.add(obj)		чтото удалитьс€ когда очиститьс€ объект
+	return false
+}
+
+weakMap

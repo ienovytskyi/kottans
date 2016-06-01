@@ -1,0 +1,25 @@
+let
+const
+initial
+z-index
+blend-mode
+reduce
+pointer-events
+фотку в гитхаб
+
+
+extend css
+optimize css
+refactor
+polyfill
+
+
+
+
+@supports (display: flex) 
+{
+	body
+		{
+			background: red;
+		}
+}
