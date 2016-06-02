@@ -7,7 +7,7 @@ var testObj = {
 	d: function () {} 
 }
 
-var testObj1 = { a1: 11, b1: "test1" }
+var testObj1 = { a1: 11, b1: "test1", c: null }
 
 
 var resObj = Object.assign([], testObj, testObj1 )
@@ -28,13 +28,14 @@ var resObj2 = Object.assign(resObj1, testObj1 )
 console.log(resObj1)
 console.log(resObj2)*/
 
-function assign(result, curr) {
-	console.log(curr)
-	return curr
+function dAssign(result, curr) {
+	console.log(Object.keys(curr))
+	console.log(curr.c)
+	//return curr
 }
 
 
-function dAssign (target) {				//object or objects` array
+function assign (target) {				//object or objects` array
 	//let arr = arguments
 	//console.log(Array.prototype.slice.call(arguments))
 	//console.log(target.prototype.slice.call(arguments))
@@ -44,12 +45,12 @@ function dAssign (target) {				//object or objects` array
 	//console.log(result)
 	var result = new Object()
 	for (let i=0; i<arguments.length; i++) {
-		assign(result,arguments[i])
+		dAssign(result,arguments[i])
 	}
 	return result
 }			
 
-var objTest = dAssign(testObj1, testObj)
+var objTest = assign(testObj1, testObj)
 
 
 /*console.log(Object.propertyIsEnumerable.call(testObj, 'a')) 
