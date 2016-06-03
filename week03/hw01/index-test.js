@@ -28,14 +28,20 @@ var resObj2 = Object.assign(resObj1, testObj1 )
 console.log(resObj1)
 console.log(resObj2)*/
 
-function dAssign(result, curr) {
-	console.log(Object.keys(curr))
-	console.log(curr.c)
-	//return curr
+function dAssign222(result, curr) {
+	//console.log(arr)
+	console.log(Reflect.ownKeys(curr).length)
+	/*for (let i=0; i<Object.keys(curr).length; i++) {
+		result[Object.keys(curr)[i]] = curr[Object.keys(curr)[i]]
+	}	*/	
+	Reflect.ownKeys(curr).forEach()
+	console.log(Reflect.ownKeys(curr))
+	//console.log(result)
+	return result
 }
 
 
-function assign (target) {				//object or objects` array
+function assign (...target) {				
 	//let arr = arguments
 	//console.log(Array.prototype.slice.call(arguments))
 	//console.log(target.prototype.slice.call(arguments))
@@ -43,10 +49,30 @@ function assign (target) {				//object or objects` array
 	//var result = assign(0, 0, target)
 	//Array.from(arguments).forEach(assign)
 	//console.log(result)
+/*	---------------------------------------
 	var result = new Object()
 	for (let i=0; i<arguments.length; i++) {
 		dAssign(result,arguments[i])
 	}
+	return result
+	---------------------------------------*/
+	var result = new Object()
+	//console.log(target)
+	target.forEach(function dAssign(item, i, arr) {
+		///console.log(Reflect.ownKeys(arr).length)
+		/*for (let i=0; i<Object.keys(curr).length; i++) {
+			result[Object.keys(curr)[i]] = curr[Object.keys(curr)[i]]
+		}	*/	
+		Reflect.ownKeys(item).forEach(function (itemInt, j, arrInt) {
+			///console.log(Reflect.ownKeys(item))
+			result[itemInt] = item[Reflect.ownKeys(item)[j]]
+		})
+		//console.log(Reflect.ownKeys(curr))
+	})
+	/*/*for (let i=0; i<target.length; i++) {
+		dAssign(result,target[i])
+	}*/
+	console.log(result)
 	return result
 }			
 
@@ -59,4 +85,4 @@ console.log(testObj.a)
 console.log(resObj)*/
 //console.log(testObj2.propertyIsEnumerable('val'))
 //console.log(testObj1[Object.keys(testObj1)[0]])
-module.exports = dAssign
+module.exports = assign

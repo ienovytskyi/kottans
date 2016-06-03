@@ -1,0 +1,16 @@
+Reflect.ownKeys
+
+destructuring, rest
+let {attrs} = node
+let [a,b] = [b,a]
+
+let [ first, ...a ] = [ 1,2,3 ]  ...a - все остлальное
+
+funcrion smth(a=1, {b}, [c]) {}
+smth(undefined, {b: 2}, [3]) - a будет =1
+
+.bind(this)
+
+array = array.concat() - not good
+array.push(...smth) - good
+
