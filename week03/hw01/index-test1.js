@@ -23,9 +23,24 @@ Object.defineProperty(testObj, 'val', {
 //console.log(testObj.val)
 
 function assign (target, ...source) {				
-	//var result = new Object()
+	var to = new target.constructor()
+	var shift = ""
 	source.forEach(function dAssign(obj, i, arr) {
 		//console.log( i) 
+		if ( i === undefined ) {
+//			shift === "" ? shift = shift+"["+arr+"]" : shift = shift+"']['"+arr
+			shift === "" ? shift = shift+arr.toString() : shift = shift+"]["+arr.toString()
+			//shift = shift + arr.toString()
+			var temp = shift
+//			console.log(eval(temp))
+		console.log(shift)
+		//to[eval("[shift]")] = new Object()
+		to[shift] = new Object()
+//		eval ( temp = new Object() )  
+//		temp['a'] = 5
+		console.log(to)
+		}
+		
 		Reflect.ownKeys(obj).forEach( (item, j, arrInt) => {
 			//if ( obj.propertyIsEnumerable(item) )
 //			console.log(arr) 
@@ -35,11 +50,14 @@ function assign (target, ...source) {
 				{//console.log(arr) 
 				typeof obj[item] !== 'object' ? ( result[arr] = new Object() ) && ( result[arr][item] = obj[Reflect.ownKeys(obj)[j]] ) : /*console.log("111")*/ /*dAssign(obj[item],undefined,item)}
 */
-			if ( obj[item] !== null && obj.propertyIsEnumerable(item) )
+/*			if ( obj[item] !== null && obj.propertyIsEnumerable(item) )
 				typeof obj[item] !== 'object' ? 
 					( i === undefined ? ( target[arr][item] = obj[Reflect.ownKeys(obj)[j]] ) : ( target[item] = obj[Reflect.ownKeys(obj)[j]] ) ) :
 					( i === undefined ? ( target[item] = new Object() ) && dAssign(obj[item],undefined,item) : ( ( target[item] = new Object() ) && dAssign(obj[item],undefined,item) ) )
-			
+*/			
+			if ( obj[item] !== null && obj.propertyIsEnumerable(item) )
+				typeof obj[item] !== 'object' ? 
+					( i === undefined ? ( to[item] = obj[Reflect.ownKeys(obj)[j]] ) : ( to[item] = obj[Reflect.ownKeys(obj)[j]] ))  : dAssign(obj[item],undefined,item)  
 
 
 			/*if ( i === undefined ) 
@@ -47,7 +65,7 @@ function assign (target, ...source) {
 				typeof obj[item] !== 'object' ? ( result[arr] = new Object() ) && ( result[arr][item] = obj[Reflect.ownKeys(obj)[j]] ) : console.log("111") dAssign(obj[item],undefined,item)}*/
 		})
 	})
-	console.log(target)
+	console.log(to)
 	return target
 }			
 
