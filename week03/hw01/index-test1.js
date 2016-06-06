@@ -22,13 +22,13 @@ Object.defineProperty(testObj, 'val', {
 
 //console.log(testObj.val)
 
-function assign (...target) {				
-	var result = new Object()
-	target.forEach(function dAssign(obj, i, arr) {
-		console.log( i) 
+function assign (target, ...source) {				
+	//var result = new Object()
+	source.forEach(function dAssign(obj, i, arr) {
+		//console.log( i) 
 		Reflect.ownKeys(obj).forEach( (item, j, arrInt) => {
 			//if ( obj.propertyIsEnumerable(item) )
-			//console.log(obj[item]) 
+//			console.log(arr) 
 /*			if ( obj[item] !== null && obj.propertyIsEnumerable(item) && i !== undefined)
 				typeof obj[item] !== 'object' ? result[item] = obj[Reflect.ownKeys(obj)[j]] : /*console.log("111")*/ /*dAssign(obj[item],undefined,item)
 			if ( i === undefined ) 
@@ -37,8 +37,8 @@ function assign (...target) {
 */
 			if ( obj[item] !== null && obj.propertyIsEnumerable(item) )
 				typeof obj[item] !== 'object' ? 
-					( i === undefined ? ( result[arr] = new Object() ) && ( result[arr][item] = obj[Reflect.ownKeys(obj)[j]] ) : result[item] = obj[Reflect.ownKeys(obj)[j]] ) :
-					( i === undefined ? dAssign(obj[item],undefined,arr.item) : dAssign(obj[item],undefined,item) )
+					( i === undefined ? ( target[arr][item] = obj[Reflect.ownKeys(obj)[j]] ) : ( target[item] = obj[Reflect.ownKeys(obj)[j]] ) ) :
+					( i === undefined ? ( target[item] = new Object() ) && dAssign(obj[item],undefined,item) : ( ( target[item] = new Object() ) && dAssign(obj[item],undefined,item) ) )
 			
 
 
@@ -47,11 +47,13 @@ function assign (...target) {
 				typeof obj[item] !== 'object' ? ( result[arr] = new Object() ) && ( result[arr][item] = obj[Reflect.ownKeys(obj)[j]] ) : console.log("111") dAssign(obj[item],undefined,item)}*/
 		})
 	})
-	console.log(result)
-	return result
+	console.log(target)
+	return target
 }			
 
-var objTest = assign(testObj1, testObj)
+var objTest = assign({}, testObj1, testObj)
+//console.log(objTest.a1)
+//console.log(testObj1)
 
 
 module.exports = assign
