@@ -6,7 +6,7 @@
     {
         value: function dAssign(target, ...sources)
         {
-            if ( target == ( null || undefined ) ) throw new TypeError ("No null/undefined objects")
+            if ( target == null || Object.getPrototypeOf(target) == null ) throw new TypeError ("No null/undefined target objects")
 
             var to = target.constructor(target)
 
@@ -15,11 +15,11 @@
         		if ( from !== Object(from) ) return
 
         		Reflect.ownKeys(from).forEach( (key) => {
-        			from.propertyIsEnumerable(key) ? 
-        				( ( (to[key] && from[key]) != ( null && undefined ) ) && ( ( typeof to[key] && typeof from[key] ) === 'object' ) ? 
+          			from.propertyIsEnumerable(key) ? 
+                        ( to[key] === Object(to[key]) && from[key] === Object(from[key]) ? 
         					to[key] = Object.dAssign(to[key], from[key]) : 
         					to[key] = from[key] ) : 
-        				eval("return") 
+        				eval("return")       
         		})
         	})
 
@@ -30,4 +30,9 @@
     })
 })()
 
-console.log(Object.dAssign({a: 0}, {b: 1, c: 2}, {c: {d: 4}}))
+console.log(Object.dAssign({a: 0}, {b: 1, c: 2, a: 5}, {a: {d: 4, m: {k: 7}}}))
+
+//проверить как работает ассайн если from -> null/undefined, from[key] -> null/undefined, to -> null/undefined, to[key] -> null/undefined, 
+/*if (val === undefined || val === null) return
+    if (hasProp.call(to, key) && (to[key] === undefined || to[key] === null)) {
+        throw new TypeError(`Cannot convert undefined or null to object ${key}`)*/

@@ -1,0 +1,82 @@
+class
+super()
+
+class MyMap extends Map
+{
+	constructor()
+	{
+		//this
+		super(...arguments)
+	}
+}
+
+
+realm
+
+from instanceof [ Date, Map, Set, RegExp ]
+
+value instanceof C
+C[Symbol.hasInstance](value)
+
+Array.prototype[Symbol.hasInstance] = function(v)
+{
+	return this.some(c => v instanceof c)
+}
+
+//old
+{}.toString.call(value) == "[object Map]"
+//new in ES6
+value[Symbol.toStringTag] == "Map"		//будет норм при разных realms
+
+Symbol.match in value
+String#match
+String#replace
+String#split
+String#search
+
+
+###PROMISES
+const delay = ms => new Promise(resolve =>
+{
+	setTimeout(resolve, ms)
+})
+
+tasks, microtasks
+синхронность, асинхронность
+https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
+https://gist.github.com/domenic/3889970
+
+
+###PROXY
+var proxy = new Proxy({},
+{
+
+})
+
+var target = { a: 1 }
+var proxy = new Proxy(target,
+{
+	get(target, key)
+	{
+		return key
+	},
+	set delete has ownKeys ....
+})
+proxy.safadsfadf  // "safadsfadf"
+
+https://www.youtube.com/watch?v=zOhvH4dslF4&list=PLnkLrCUX4Qh57cMQhiUVxpYUYzJ98SRnJ&index=2
+promisify
+
+axel rauschmayer proxy
+http://www.2ality.com/2014/12/es6-proxies.html
+
+
+HW:
+Promise.filter
+Promise.map
+Promise.reduce
+как в bluebird
+class MyPromise extends Promise
+
+
+
