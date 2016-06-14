@@ -1,0 +1,7 @@
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+https://www.google.com.ua/search?q=bluebird&ie=utf-8&oe=utf-8&gws_rd=cr&ei=iV5gV-bFKqXm6ATe6q7gDQ#q=bluebird+js+promise.map
+https://www.npmjs.com/package/promise-map
+https://github.com/yoshuawuyts/promise-map/blob/master/index.js
+http://bluebirdjs.com/docs/api/promise.map.html
+
+https://github.com/petkaantonov/bluebird/blob/master/test/mocha/map.js
