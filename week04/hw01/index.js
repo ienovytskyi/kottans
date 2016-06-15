@@ -1,22 +1,31 @@
 class MyPromise extends Promise
 { 
-	static map(iterable, map) 
+	constructor (...args) {
+		super(...args)
+		return this
+	}
+	static map(iterable, mapper) 
 	{ 
-		console.log(this)
+		console.log("this")
 		return new this((resolve, reject) => { 
 			let result = [] 
 			let done = 0 
 
 			for (let promise of iterable) {
 				done++
-				promise.then(value => 
+/*				promise.then(value => 
 					{ 
-						result.push(map(value)) 
+						result.push(mapper(value)) 
 						if (! --done)
 //						done++ 
 //						if (done == result) 
 							resolve(result) 
 					}, reject) 
+*/				promise.then(new this ((resolve, reject) =>{
+                	result.push(mapper(value))
+                	if (! --done)
+                    	resolve(result)
+            	}),  reject)
 			}
 		}) 
 	} 
@@ -25,5 +34,8 @@ class MyPromise extends Promise
 
 //console.log(MyPromise(,b))
 
-let mypromise = new MyPromise()
-console.log(mypromise.map([1,2,3,4,5], num => num*2))
+const names = [Promise.resolve('HTML'), Promise.resolve('CSS'), Promise.resolve('JS')]
+const mypromise = new MyPromise(() => {})
+//const result = mypromise.map(names, name => name.length )
+
+console.log(mypromise)
