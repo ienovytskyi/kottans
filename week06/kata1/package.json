@@ -1,0 +1,14 @@
+{
+	"name": "my-kata",
+	"version": "1.0.0",
+	"scripts":
+	{
+		"test": "mocha -w ./test"
+	},
+	"dependencies":
+	{
+		"mocha": "*",
+		"chai": "*",
+		"sinon": "*"
+	}
+}
