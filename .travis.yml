@@ -4,4 +4,4 @@ node:
   - "6.2"
 
 script:
-  cd /week06/kata1 && npm test
+  cd week06/kata1 && npm test
