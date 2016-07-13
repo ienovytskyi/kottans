@@ -1,0 +1,16 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "Kottan`s Nodejs homework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "start": "node_modules/.bin/nodemon start.js"
+  },
+  "author": "Ievgen Novytskyi",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.21.0",
+    "nodemon": "^1.9.2"
+  }
+}
