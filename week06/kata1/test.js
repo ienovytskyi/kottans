@@ -3,7 +3,7 @@
 require("chai").should()
 //require("chai").expect
 
-const add = require("./")
+var add = require("./")
 
 describe("add", () => 
 {
